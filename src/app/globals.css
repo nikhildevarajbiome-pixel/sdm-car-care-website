@@ -1,0 +1,10 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{@apply bg-ink text-zinc-100 font-body antialiased}
+.btn{@apply inline-flex min-h-[48px] items-center justify-center rounded-md border border-line px-6 text-[15px] font-semibold transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber}
+.btn-wa{@apply border-red bg-red text-white}
+.h2{@apply font-display text-4xl font-bold leading-none sm:text-6xl}
+.noscroll::-webkit-scrollbar{display:none}.noscroll{scrollbar-width:none}
+@keyframes up{from{opacity:0;transform:translateY(28px)}}
+.rise{animation:up .9s both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
