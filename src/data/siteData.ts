@@ -82,6 +82,9 @@ export const categories = [
   },
   {
     title: "Automotive Care",
+    support: true,
+    supportText:
+      "GUIDANCE & SUPPORT — We’ll help you find the right solution.",
     items: [
       "Air & Cabin Filter Replacement",
       "Air Conditioning",
@@ -116,8 +119,6 @@ export const prices: { name: string; p: Prices }[] = [
   { name: "Premium Interior Enrichment", p: [2500, 3500, 4500] },
   { name: "Paint Rejuvenation", p: [2500, 2800, 3200] },
   { name: "3M Rubbing & Polishing", p: [6000, 8000, 12000] },
-  { name: "Nano Glass Coating", p: [1000, 1100, 1200] },
-  { name: "Alloy Wheel Protection", p: [700, 800, 900] },
 ];
 
 // ===== COMBO OFFER =====
