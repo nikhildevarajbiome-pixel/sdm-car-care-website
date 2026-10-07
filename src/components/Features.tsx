@@ -33,7 +33,8 @@ function LazyService({
         }
       },
       {
-        rootMargin: "500px 0px",
+        rootMargin: "200px 0px",
+        threshold: 0,
       }
     );
 
@@ -47,7 +48,10 @@ function LazyService({
       {visible ? (
         children
       ) : (
-        <div className="min-h-[420px] rounded-2xl bg-[#11151c] animate-pulse" />
+        <div
+          className="min-h-[420px] rounded-2xl bg-[#11151c]"
+          aria-hidden="true"
+        />
       )}
     </div>
   );

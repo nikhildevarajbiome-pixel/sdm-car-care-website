@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative -mt-[68px] flex min-h-[100svh] items-end overflow-hidden bg-navy pt-[110px] pb-5 sm:min-h-[88vh] sm:pb-10"
+      className="relative -mt-[68px] flex min-h-[100svh] items-end overflow-hidden bg-navy pb-5 pt-[110px] sm:min-h-[88vh] sm:pb-10"
     >
       {/* HERO VIDEO */}
       <video
@@ -13,10 +13,13 @@ export default function Hero() {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         aria-hidden="true"
       >
-        <source src="/videos/hero-optimized.mp4" type="video/mp4" />
+        <source
+          src="/videos/hero-optimized.mp4"
+          type="video/mp4"
+        />
       </video>
 
       {/* DARK OVERLAYS */}
@@ -29,7 +32,7 @@ export default function Hero() {
       {/* CONTENT */}
       <div className="relative z-10 mx-auto flex w-full max-w-7xl items-end px-5 pb-2 sm:px-8 sm:pb-0 lg:px-12">
         <div className="w-full max-w-3xl translate-y-2 sm:translate-y-0">
-          
+
           {/* LABEL */}
           <div className="mb-4 flex items-center gap-3 sm:mb-6">
             <span className="h-[2px] w-8 bg-red sm:w-10" />
@@ -70,6 +73,7 @@ export default function Hero() {
 
           {/* BUTTONS */}
           <div className="mt-5 grid grid-cols-2 gap-2.5 sm:mt-8 sm:flex sm:flex-wrap sm:gap-3">
+
             <a
               className="btn btn-wa min-h-12 justify-center px-3 text-sm sm:px-6 sm:text-base"
               href={links.wa(
@@ -96,12 +100,14 @@ export default function Hero() {
             >
               Get Directions
             </a>
+
           </div>
 
           {/* LOCATION */}
           <p className="mt-4 pb-1 text-[10px] tracking-[0.12em] text-zinc-300 sm:mt-7 sm:pb-0 sm:text-xs sm:tracking-wide">
             BASAVESHWAR NAGAR · BENGALURU
           </p>
+
         </div>
       </div>
     </section>

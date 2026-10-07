@@ -19,10 +19,12 @@ export default function Gallery() {
       <div className="pointer-events-none absolute -left-32 top-32 h-80 w-80 rounded-full bg-red/[0.04] blur-[110px]" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+
         {/* Section heading */}
         <div className="mb-10 max-w-2xl sm:mb-14">
           <div className="mb-5 flex items-center gap-3">
             <span className="h-[2px] w-10 bg-red" />
+
             <span className="text-xs font-semibold uppercase tracking-[0.28em] text-red">
               Our Portfolio
             </span>
@@ -30,7 +32,9 @@ export default function Gallery() {
 
           <h2 className="font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl">
             Work That
-            <span className="block text-red">Speaks for Itself.</span>
+            <span className="block text-red">
+              Speaks for Itself.
+            </span>
           </h2>
 
           <p className="mt-5 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base">
@@ -48,6 +52,7 @@ export default function Gallery() {
           {galleryFilters.map((c) => (
             <button
               key={c}
+              type="button"
               aria-pressed={f === c}
               onClick={() => {
                 setF(c);
@@ -70,6 +75,7 @@ export default function Gallery() {
             {list.map((g, i) => (
               <button
                 key={g.src}
+                type="button"
                 onClick={() => setLb(i)}
                 aria-label={`Enlarge: ${g.alt}`}
                 className={`group relative overflow-hidden rounded-xl border border-white/[0.06] bg-[#151820] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red ${
@@ -83,6 +89,7 @@ export default function Gallery() {
                   alt={g.alt}
                   className="h-full w-full transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 25vw"
+                  priority={i < 2}
                 />
 
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
@@ -91,6 +98,7 @@ export default function Gallery() {
                   <span className="text-xs font-medium text-white/90 sm:text-sm">
                     {g.alt}
                   </span>
+
                   <span className="grid h-8 w-8 flex-none place-items-center rounded-full border border-white/30 bg-black/30 text-white opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
                     ↗
                   </span>
@@ -103,6 +111,7 @@ export default function Gallery() {
             <p className="font-display text-lg font-semibold text-white">
               Photos coming soon
             </p>
+
             <p className="mt-2 text-sm text-zinc-500">
               We’re preparing our workshop gallery.
             </p>
@@ -117,6 +126,7 @@ export default function Gallery() {
         )}
       </div>
 
+      {/* Lightbox */}
       {lb !== null && (
         <Lightbox
           items={list}

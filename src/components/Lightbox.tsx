@@ -27,6 +27,7 @@ export default function Lightbox({
 
   const go = (direction: number) => {
     const total = items.length;
+
     if (total <= 1) return;
 
     const next =
@@ -35,10 +36,6 @@ export default function Lightbox({
     onChange(next);
   };
 
-  /*
-   * Lock the entire page when lightbox opens.
-   * This effect runs ONLY when the lightbox opens/closes.
-   */
   useEffect(() => {
     const scrollY = window.scrollY;
 
@@ -94,6 +91,13 @@ export default function Lightbox({
     return null;
   }
 
+  /*
+   * Use the same optimized WebP path as Photo.tsx.
+   */
+  const optimizedSrc = items[index].src
+    .replace("/images/", "/optimized-images/")
+    .replace(/\.(jpg|jpeg|png)$/i, ".webp");
+
   const lightbox = (
     <div
       role="dialog"
@@ -111,7 +115,7 @@ export default function Lightbox({
         onClick={(e) => e.stopPropagation()}
       >
         <Image
-          src={items[index].src}
+          src={optimizedSrc}
           alt={items[index].alt}
           fill
           priority
@@ -171,6 +175,5 @@ export default function Lightbox({
     </div>
   );
 
-  // Render directly into <body>
   return createPortal(lightbox, document.body);
 }
