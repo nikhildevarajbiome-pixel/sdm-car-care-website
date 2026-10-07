@@ -2,8 +2,8 @@
 
 export const business = {
   name: "SDM Car Care",
-  phone: "9686995996",
-  waNumber: "919686995996",
+  phone: "9611444777",
+  waNumber: "919611444777",
   address: [
     "14, 8th Main Cross Rd",
     "4th Block, West of Chord Road",
