@@ -2,8 +2,8 @@
 
 export const business = {
   name: "SDM Car Care",
-  phone: "9611444777",
-  waNumber: "919611444777",
+  phone: "9686995996",
+  waNumber: "919686995996",
   address: [
     "14, 8th Main Cross Rd",
     "4th Block, West of Chord Road",
@@ -23,7 +23,7 @@ export const links = {
   wa: (text: string) =>
     `https://wa.me/${business.waNumber}?text=${encodeURIComponent(text)}`,
 
-  tel: `tel:+${business.waNumber}`,
+  tel: `tel:+${business.phone}`,
 
   maps:
     business.mapsUrl ||
@@ -95,11 +95,8 @@ export const categories = [
       "Transmission",
       "Tyres",
       "Vehicle Engine Diagnostics",
+      "Automotive Car Sourcing",
     ],
-  },
-  {
-    title: "Special",
-    items: ["Classic Cars"],
   },
 ];
 
@@ -114,14 +111,13 @@ export type Prices = [number, number, number];
 export const prices: { name: string; p: Prices }[] = [
   { name: "Full Car Wash", p: [400, 500, 500] },
   { name: "Glow Touch", p: [1500, 1800, 2100] },
+  { name: "Interior Cleaning", p: [3000, 3500, 4500] },
   { name: "Interior Enrichment", p: [2000, 3000, 3500] },
   { name: "Premium Interior Enrichment", p: [2500, 3500, 4500] },
   { name: "Paint Rejuvenation", p: [2500, 2800, 3200] },
-  { name: "Windshield Scratch Removing", p: [900, 1000, 1200] },
+  { name: "3M Rubbing & Polishing", p: [6000, 8000, 12000] },
   { name: "Nano Glass Coating", p: [1000, 1100, 1200] },
   { name: "Alloy Wheel Protection", p: [700, 800, 900] },
-  { name: "Head Light Restoration", p: [500, 500, 600] },
-  { name: "Logo Cleaning", p: [300, 300, 300] },
 ];
 
 // ===== COMBO OFFER =====
@@ -132,7 +128,7 @@ export const combo: { includes: string[]; p: Prices } = {
     "Premium Interior Enrichment",
     "Glow Touch",
   ],
-  p: [3500, 4000, 4500],
+  p: [4000, 5000, 6000],
 };
 
 // ===== SERVICE DETAIL SECTIONS =====
@@ -167,12 +163,12 @@ export const features: Feature[] = [
   },
   {
     id: "detailing",
-    title: "Detailing",
+    title: "Detailing Wash",
     text: "Glow Touch, interior cleaning and enrichment, paint rejuvenation and body polishing.",
     dir: "detailing",
     prefix: "detailing",
     count: 3,
-    waService: "Detailing",
+    waService: "Detailing Wash",
     price: "Glow Touch",
   },
   {
@@ -183,17 +179,17 @@ export const features: Feature[] = [
     prefix: "interior-cleaning",
     count: 3,
     waService: "Interior Cleaning",
-    price: "Interior Enrichment",
+    price: "Interior Cleaning",
   },
   {
     id: "paint",
-    title: "Paint Polishing",
-    text: "Paint polishing, body polishing and paint rejuvenation.",
+    title: "3M Rubbing & Polishing",
+    text: "3M rubbing and polishing for a refreshed and glossy finish.",
     dir: "paint",
     prefix: "paint-polishing",
     count: 3,
-    waService: "Paint Polishing",
-    price: "Paint Rejuvenation",
+    waService: "3M Rubbing & Polishing",
+    price: "3M Rubbing & Polishing",
   },
   {
     id: "ppf",
@@ -237,38 +233,35 @@ export const features: Feature[] = [
 
 export const galleryFilters = [
   "All",
-  "Wash",
+  "Workshop",
   "Detailing",
-  "Interior",
-  "Paint",
-  "Protection",
 ] as const;
 
 export const gallery = [
   {
-    cat: "Wash",
-    src: "/images/wash/full-car-wash-01.jpg",
-    alt: "Full car wash at SDM Car Care",
+    cat: "Workshop",
+    src: "/images/gallery/sdm-work-01.jpg",
+    alt: "Red Jeep inside SDM Car Care workshop",
+  },
+  {
+    cat: "Workshop",
+    src: "/images/gallery/sdm-work-02.jpg",
+    alt: "White SUV inside SDM Car Care workshop",
   },
   {
     cat: "Detailing",
-    src: "/images/detailing/detailing-01.jpg",
-    alt: "Car detailing at SDM Car Care",
+    src: "/images/gallery/sdm-work-03.jpg",
+    alt: "Black hatchback after automotive care",
   },
   {
-    cat: "Interior",
-    src: "/images/interior/interior-cleaning-01.jpg",
-    alt: "Car interior cleaning at SDM Car Care",
+    cat: "Detailing",
+    src: "/images/gallery/sdm-work-04.jpg",
+    alt: "Toyota Crysta inside SDM Car Care",
   },
   {
-    cat: "Paint",
-    src: "/images/paint/paint-polishing-01.jpg",
-    alt: "Paint polishing at SDM Car Care",
-  },
-  {
-    cat: "Protection",
-    src: "/images/protection/ppf-01.jpg",
-    alt: "Paint protection at SDM Car Care",
+    cat: "Workshop",
+    src: "/images/gallery/sdm-work-05.jpg",
+    alt: "SDM Car Care workshop exterior",
   },
 ];
 
