@@ -22,7 +22,7 @@ const categoryDescriptions: Record<string, string> = {
     "Professional body repair, painting and restoration for exterior damage and wear.",
 
   "Automotive Care":
-    "Complete mechanical, electrical and maintenance support for your vehicle.",
+    "Guidance & support — we'll help you find the right solution.",
 
   Special:
     "Specialised automotive care for unique and classic vehicles.",
@@ -54,9 +54,8 @@ export default function Services() {
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
 
-        {/* ================= HEADER ================= */}
-
-        <div className="mb-16 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:mb-20">
+        {/* HEADER */}
+        <div className="mb-16 grid gap-10 lg:mb-20 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
 
           <div>
             <div className="mb-6 flex items-center gap-3">
@@ -95,8 +94,7 @@ export default function Services() {
           </div>
         </div>
 
-        {/* ================= SERVICE GRID ================= */}
-
+        {/* SERVICE GRID */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
 
           {categories.map((category, index) => {
@@ -108,6 +106,9 @@ export default function Services() {
 
             const hasMore = category.items.length > 5;
 
+            const isSupport =
+              category.title === "Automotive Care";
+
             return (
               <article
                 key={category.title}
@@ -117,6 +118,7 @@ export default function Services() {
                     : ""
                 }`}
               >
+
                 {/* Top accent */}
                 <div className="absolute left-0 top-0 h-[2px] w-0 bg-red transition-all duration-700 group-hover:w-full" />
 
@@ -143,13 +145,19 @@ export default function Services() {
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-4 max-w-xl text-sm leading-7 text-zinc-500">
+                  <p
+                    className={`mt-4 max-w-xl leading-7 ${
+                      isSupport
+                        ? "text-sm font-semibold uppercase tracking-[0.08em] text-zinc-300"
+                        : "text-sm text-zinc-500"
+                    }`}
+                  >
                     {categoryDescriptions[category.title]}
                   </p>
 
                   {/* Service list */}
                   <div className="mt-7 grid gap-x-6 sm:grid-cols-2">
-                    {visibleItems.map((item, itemIndex) => (
+                    {visibleItems.map((item) => (
                       <div
                         key={item}
                         className="flex items-center gap-3 border-b border-white/[0.06] py-3"
@@ -203,8 +211,7 @@ export default function Services() {
           })}
         </div>
 
-        {/* ================= BOTTOM STATEMENT ================= */}
-
+        {/* BOTTOM STATEMENT */}
         <div className="mt-16 flex flex-col gap-6 border-t border-white/[0.07] pt-8 sm:flex-row sm:items-center sm:justify-between">
 
           <p className="text-xs uppercase tracking-[0.25em] text-zinc-600">
